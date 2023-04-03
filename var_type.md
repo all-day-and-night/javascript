@@ -57,7 +57,82 @@ const foo = 1;
 ```
 
 
-
 # 자바스크립트의 8가지 기본타입
+```
 // number, bigint, string, boolean, object, symbol, undefined, null
 ```
+
+
+# Number
+
+- 문자열에서 숫자 파싱하기
+```
+Number.parseInt('---')
+Number.parseFloat('---')
+
+const v = Number.parseInt('abc');
+console.log(v) // NaN 출력 
+
+const v = 1 / 0; // Infinity 출력 
+console.log('Infinity', v === Infinity);
+console.log('Number.isFintie', Number.isFinite(v));
+```
+
+- number -> 64 비트 부동소수점 사용 , 최적화 불가
+
+
+
+# string 
+```
+// 선언 방식 
+cost s1 = 'abc';  
+cost s2 = "abcd";
+cost s3 = `abc`;
+
+// s1.length // 길이 정보 추출 가능
+```
+
+> 문자열 생성
+```
+const name = 'mike';
+const age = 23;
+const text1 = 'name: ' + name + ', age: ' + age;
+cosnt text2 = `name: ${name}, age: ${age}`; // 백틱 사용
+```
+
+> javascript string은 불변 / 초기화 후 변경 x
+
+```
+const input = 'This is my car. The car is mine';
+const output = input.replace('car', 'bike');
+const output = input.replaceAll('car', 'bike');
+
+// string 불변이기 때문에 새로운 문자열 객체 생성 
+
+s1.includes('car');
+s1.startsWith('car');
+s1.endsWiths('car');
+
+// 문자열  추출
+s1.substr(0, 11); // (시작점, offset)
+s1.slice(0, 2); // (시작점, 끝점)
+
+// index 반환
+s1.indexOf(' ') 
+
+// 분할
+s1.split(' ');
+
+// 합침
+s1.split(' ').join('');
+
+// trim 앞뒤 공백제거
+arr.map(item => item.trim());
+
+// 일정 길이 
+'123'.padStart(5, '0');
+'123'.padEnd(5, '0');
+```
+
+
+
