@@ -3,7 +3,25 @@
 - ES6 
 > const, let 사용가능
 
-> 정의된 변수는 함수 스코프를 갖기 때문에 함수 내에서만 사용 가능
+## var
+> 함수 내에서 선언될 때는 함수 범위
+> 함수 바깥에서 선언시 전역변수 
+> 재선언, 업데이트 가능
+> hoisting / 초기화 전에는 undifined
+
+## Let
+> {} 블록 범위로 바인딩, 외부에서 사용 불가능
+> 업데이트 가능 / 재선언 불가능
+> hoisting되지만 초기화 이전에 let 변수 사용시 Reference Error(참조 오류 발생)
+
+## Const 일정한 상수값 유지
+> 선언된 블록 범위 내에서만 접근 가능 
+> 업데이트, 재선언 불가능 
+> 객체의 속성은 업데이트 가능 
+> let과 마찬가지로 hoisting되지만, 초기화 이전에 사용시 Reference Error
+
+
+
 
 ```
 function example() {
@@ -168,4 +186,52 @@ Object.entries(Obj);
 for (const [key, value] of Object.entries(Obj)){
     console.log(key, value);
 }
+
+const Obj = {
+    age: 21,
+    name: 'mike'
+};
+// key, value 추가
+Obj.city = 'seoul';
+//삭제
+delete Obj.city;
+delete Obj['city'];
 ```
+
+- Array
+```
+const arr = [1, 2, 3];
+const arr2 = new Array(1, 2, 3);
+
+typeof arr === 'object';
+
+//iterator
+arr.map(item => item + 1);
+arr.filer(ite => item >= 2);
+arr.redurce((acc, item) => acc + item, 0);
+
+arr.forEach(item => console.log(item));
+for (const item of arr){
+    console.log(item);
+}
+arr.some(item => item === 2); // 하나라도 2가 있으면 true
+arr.every(item => item === 2); // 모든 item이 2이면 true
+arr.includes(2);
+arr.find(item => item % 2 === 1)
+arr.findIndex(item => item % 2 === 1);
+
+// push, pop
+arr.push(4)
+arr.pop();
+
+// splice()
+arr.splice(1, 1); // 1번 인덱스에서 1개 삭제
+arr.splice(1, 0, 10, 20, 30); // 1번 인덱스에서 0개 삭제 후 10, 20, 30 추가
+arr.splice(1, 3, 40, 50); // 1번 인덱스에서 3개 삭제 후 40, 50 추가 
+
+// 정렬
+arr.sort()
+```
+
+
+
