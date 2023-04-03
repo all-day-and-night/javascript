@@ -134,5 +134,38 @@ arr.map(item => item.trim());
 '123'.padEnd(5, '0');
 ```
 
+# Boolean Type, nullish coalescing
 
+> true, false
 
+```
+// && ,||, !, ~ 
+
+// nullish coaleascing
+// 빈 문자열도 기본값으로 사용하고 싶다면 사용, 아니면 or 연산자 사용
+const name = person.name ?? 'unknown';
+const name = 
+    person.name === undifined || person.name === null ? 'unknown' : person.name;
+```
+
+# Object Type, Array
+
+```
+const Obj = {
+    age: 21,
+    name: 'mike'
+};
+
+const Obj2 = new Object({
+    age:21,
+    name:'mike'
+});
+// 생성자를 활용한 기능 사용
+Object.keys(Obj);
+Object.values(Obj);
+Object.entries(Obj);
+
+for (const [key, value] of Object.entries(Obj)){
+    console.log(key, value);
+}
+```
